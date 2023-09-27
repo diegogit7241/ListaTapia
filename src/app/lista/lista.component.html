@@ -1,0 +1,42 @@
+
+
+<h1 [ngStyle]="{'color':'red','background-color':'#ff0','text-align':'center'}">{{tittle}}</h1>
+<table class="titulos">
+<tr >
+    <th>NOMBRE</th>
+    
+    <th>APELLIDO</th>
+    
+    <th>EDAD</th>
+
+    <th>PAIS</th>
+
+    <th>IDIOMA</th>
+    
+    
+</tr>
+</table>
+<table *ngFor="let a of alumnos">
+   
+    <tr>
+        <td> {{a.nombre}}</td>    
+        
+        <td> {{a.apellido}}</td>    
+        
+        <td >  {{a.edad}} </td>
+        
+        <td> {{a.pais}} </td>
+        <td [ngSwitch]="a.pais">
+
+            <span *ngSwitchCase="'Chile'">Español</span>
+            <span *ngSwitchCase="'Argentina'">Español</span>
+            <span *ngSwitchCase="'Colombia'">Español</span>
+            <span *ngSwitchCase="'Brasil'">Portugues</span>          
+        
+        </td>
+       
+        
+    </tr>
+    <p *ngif="true">mayor</p>
+
+    <span style="background-color: aqua" *ngIf="a.pais == 'Es'">Sudamericano</span>
